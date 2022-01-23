@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+       <title>Pemesanan Tiket Maskapai</title>
+</head>
+<body>
+<form action="uasoutput.php" method="POST">
+<pre>
+***Pemesanan Tiket Maskapai***
+=================================
+
+Nama Pemesan : <input type="text" name="nama"><br>
+Jumlah Tiket : <input type="text" name="tiket"><br>
+Kelas        : <select name="kelas">
+               <option value="">- PILIH -
+               <option value="Ekonomi">Ekonomi
+               <option value="Bisnis">Bisnis
+               <option value="Eksekutif">Eksekutif
+               </select><br>
+Tujuan       : <select name="tujuan">
+               <option value="">- PILIH -
+               <option value="Bali">Bali
+               </select><br>          
+Bagasi       : <input type="radio" name="bagasi" value="5kg">5kg <input type="radio" name="bagasi" value="10kg">10kg <input type="radio" name="bagasi" value="15kg">15kg <br>
+Asuransi     : <input type="checkbox" name="asuransi" value="Asuransi Jiwa">Asuransi Jiwa
+               <input type="checkbox" name="asuransi1" value="Asuransi Keselamatan">Asuransi Keselamatan
+               <input type="checkbox" name="asuransi2" value="Asuransi Keterlambatan">Asuransi Keterlambatan
+               <br>
+<input type="submit" value="Simpan"> <input type="reset" value="Batal">
+</body>
+</html>
