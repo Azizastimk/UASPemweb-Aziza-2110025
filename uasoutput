@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+      <title>Data Pemesanan Tiket</title>
+</head>
+<body>
+<?php
+
+     $nama=$_POST['nama'];
+     $jumlahtiket=$_POST['tiket'];
+     $kelas=$_POST['kelas'];
+     $tujuan=$_POST['tujuan'];
+     $bagasi=$_POST['bagasi'];
+     $asuransi=$_POST['asuransi'];
+
+if ($kelas=="Ekonomi"){
+    $nama1="Ekonomi";
+    $harga="1000000";
+    $fasilitas="Air Mineral";
+    }
+else if($kelas=="Bisnis"){
+    $nama1="Bisnis";
+    $harga="2000000";
+    $fasilitas="Snack";
+    }
+else {
+    $nama1="Eksekutif";
+    $harga="3000000";
+    $fasilitas="Makan";
+    }
+
+    $totalharga=$jumlahtiket*$harga;
+if ($jumlahtiket >= 3){
+    $diskon=0.03*$harga;
+    }
+else{
+    $diskon=0;
+    }
+
+if ($tujuan=="Bali"){
+    $nama1="Bali";
+    }
+else if ($tujuan=="Bandung"){
+    $nama1="Bandung";
+    }
+
+if ($bagasi=="5kg"){
+    $biaya=100000;
+    }
+else if ($bagasi=="10kg"){
+    $biaya=150000;
+    }
+else{
+    $biaya=200000;
+    }
+
+if ($asuransi=="asuransi"){
+    $nama1="Asuransi jiwa";
+    $cost=50000;
+    }
+else if($asuransi=="asuransi"){
+    $nama2="Asuransi Keselamatan";
+    $cost=50000;
+    }
+else{
+    $nama3="Asuransi Keterlambatan";
+    $cost=50000;
+    }
+
+$biayaasuransi=2*$cost;
+if ($asuransi >= 1){
+    $diskon=0;
+    }
+
+$totalbayar=$totalharga-$diskon+$biaya+$biayaasuransi;
+
+?>
+
+<pre>
+Nama Pemesanan   : <?php echo $nama; ?><br>
+Jumlah Tiket     : <?php echo $jumlahtiket; ?><br>
+Kelas            : <?php echo $kelas; ?><br>
+Tujuan           : <?php echo $tujuan; ?><br >
+Bagasi           : <?php echo $bagasi; ?><br>
+Asuransi         : <?php echo $asuransi; ?><br>
+---------------------------------------------
+Total Bayar      : <?php echo "Rp.".Number_format($totalbayar); ?> <br>
+---------------------------------------------
+
+<a href="uasinput.php">INPUT DATA LAGI </a>
+
+</body>
+</html>
